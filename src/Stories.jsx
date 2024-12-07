@@ -1,3 +1,4 @@
+import List from './List';
 const Stories = () => {
   const stories = [
     {
@@ -17,6 +18,10 @@ const Stories = () => {
       objectID: 1,
     },
   ];
-  return <div>Stories</div>;
+  return (
+    <div>
+      <List list={stories} />
+    </div>
+  );
 };
 export default Stories;

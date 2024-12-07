@@ -1,10 +1,8 @@
+import * as React from 'react';
 const Search = () => {
+  const [searchTerm, setSearchTerm] = React.useState('');
   const handleChange = (event) => {
-    console.log(event);
-    console.log(event.target.value);
-  };
-  const handleClick = () => {
-    alert('I was clicked');
+    setSearchTerm(event.target.value);
   };
   return (
     <div>
@@ -13,9 +11,11 @@ const Search = () => {
         type='text'
         id='search'
         onChange={handleChange}
-        onClick={handleClick}
         placeholder='Enter search term here'
       />
+      <p>
+        Searching for <strong>{searchTerm}</strong>.
+      </p>
     </div>
   );
 };

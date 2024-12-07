@@ -117,3 +117,79 @@ following a link.
 
 – Answer: It stops the event from propagating up or down the DOM tree, preventing parent
 or child elements from handling the same event.
+
+### Question: What are props in React?
+
+– Answer: Props (short for properties) are a mechanism for passing data from a parent
+component to a child component.
+
+### Question: How do you pass props to a component in JSX?
+
+– Answer: Include them as attributes, like <MyComponent prop1={value1} prop2={value2}
+/>.
+
+### Question: How do you access props in a function component?
+
+– Answer: Use the function parameters to access props, like function MyComponent(props)
+{...}.
+
+### Question: Can you modify the value of props inside a component?
+
+– Answer: No, props are immutable. They should be treated as read-only.
+
+## React State
+
+- While it is not allowed to mutate React props as a developer, because they are only there to pass
+  information from parent to child components, React state introduces a mutable data structure (read:
+  stateful values). These stateful values get instantiated in a React component as state, can be passed
+  with props as vehicle down to child components, but can also get mutated by using a function to
+  modify the state. When a state gets mutated, the component with the state and all child components
+  will re-render.
+- While props are used to pass
+  information down the component hierarchy, state is used to modify information over time.
+- React’s useState method takes an initial state as an argument – in our case it is an empty string.
+  Furthermore, calling this method will return an array with two entries: The first entry (searchTerm)
+  represents the current state. The second entry (setSearchTerm) is a function to update this state.
+
+## Interview Questions:
+
+### Question: What is useState in React?
+
+– Answer: useState is a React hook that allows function components to manage and update
+state.
+
+### Question: How do you use useState to declare state in a function component?
+
+– Answer: const [state, setState] = useState(initialState);
+
+### Question: What triggers a re-render in React?
+
+– Answer: State changes or prop updates can trigger a re-render in React.
+
+### Question: What is the purpose of the initial state in useState?
+
+– Answer: It sets the initial value of the state variable and only applies during the first render.
+
+### Question: How do you update state using useState?
+
+– Answer: Use the second entry returned by useState to update the state.
+
+### Question: Does calling setState trigger an immediate re-render?
+
+– Answer: No, React batches state updates and performs re-renders asynchronously for
+performance reasons.
+
+### Question: What is the difference between using multiple useState calls and a single useState
+
+call with an object?
+– Answer: Using multiple calls creates independent state variables, while a single call with
+an object allows you to manage multiple state values within one variable.
+
+### Question: Can you directly mutate the state variable obtained from useState?
+
+– Answer: No, you should always use the setState function to update the state in a immutable
+way.
+
+### Question: Does updating state always trigger a re-render?
+
+– Answer: Yes, updating state with setState triggers a re-render of the component.
