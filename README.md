@@ -193,3 +193,51 @@ way.
 ### Question: Does updating state always trigger a re-render?
 
 – Answer: Yes, updating state with setState triggers a re-render of the component.
+
+## Callback Handlers in JSX
+
+- A callback handler gets
+  introduced as event handler (A), is passed as function in props to another component (B), is executed
+  there as handler (C), and calls back to the place it was introduced (D):
+- In other
+  words, when an (event) handler is passed as props from a parent component to its child component,
+  it becomes a callback handler. React props are always passed down the component tree and therefore
+  functions that are passed down as callback handlers in props can be used to communicate up the
+
+## Interview Questions:
+
+### Question: What is a callback handler in React?
+
+– Answer: A callback handler is a function passed as a prop to a child component, allowing
+the child to communicate with the parent.
+
+### Question: How do you pass a callback handler to a child component?
+
+– Answer: Include it as a prop, like <ChildComponent callback={handleCallback} />.
+
+### Question: How do you define a callback handler in a parent component?
+
+– Answer: Create a function in the parent component, e.g., function handleCallback(data)
+{...}.
+
+### Question: Can a callback handler receive parameters?
+
+– Answer: Yes, callback handlers can receive parameters passed by the child component.
+
+### Question: Can callback handlers be asynchronous?
+
+– Answer: Yes, callback handlers can be asynchronous, allowing for handling asynchronous
+operations.
+
+### Question: Can you pass a callback handler through multiple layers of components?
+
+– Answer: Yes, you can pass callback handlers through multiple layers of components.
+
+### Question: Can a child component have multiple callback handlers from the same parent?
+
+– Answer: Yes, a child component can receive and use multiple callback handlers passed
+from the same parent component.
+
+### Question: Is it common to use callback handlers for form submissions in React?
+
+– Answer: Yes, callback handlers are com
