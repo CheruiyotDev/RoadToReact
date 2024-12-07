@@ -62,3 +62,58 @@ organization.
 
 – Answer: Yes, extracting components into separate files promotes better file organization
 and modularity.
+
+### Question: How do you declare a function component using a function declaration?
+
+– Answer: Use the function keyword, like function MyComponent() {...}.
+
+### Question: How do you declare a function component using an arrow function expression?
+
+– Answer: Use the arrow function syntax, like const MyComponent = () => {...};.
+
+### Question: How do you define an event handler in React?
+
+– Answer: Create a function that handles the event, like function handleClick() {...}.
+
+### Question: How do you attach an event handler in JSX?
+
+– Answer: Use the appropriate attribute, like onClick={handleClick}.
+
+### Question: What is the common pattern for naming event handler functions?
+
+– Answer: Prefix the function name with “handle” followed by the event name, like
+handleClick for a click event.
+
+### Question: Can you use arrow functions directly in the JSX for event handlers?
+
+– Answer: Yes, using arrow functions directly in JSX is a common pattern for concise event
+handlers.
+
+### Question: How do you pass arguments to an event handler in JSX?
+
+– Answer: Use an arrow function to call the handler with arguments, like onClick={() =>
+handleClick(arg)}.
+
+### Question: Can you reuse event handlers across multiple elements?
+
+– Answer: Yes, event handlers can be reused for multiple elements with the same event type.
+
+### Question: What is the purpose of the e.target property in an event handler?
+
+– Answer: It refers to the DOM element that triggered the event, allowing you to access its
+properties or manipulate it.
+
+### Question: How do you access the event object in an event handler?
+
+– Answer: Include (event) as a parameter in the handler function, like function handleClick(event)
+{...}.
+
+### Question: What does event.preventDefault() do in an event handler?
+
+– Answer: It prevents the default behavior of the event, such as submitting a form or
+following a link.
+
+### Question: What is the purpose of the e.stopPropagation() method in an event handler?
+
+– Answer: It stops the event from propagating up or down the DOM tree, preventing parent
+or child elements from handling the same event.
