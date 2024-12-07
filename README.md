@@ -241,3 +241,5 @@ from the same parent component.
 ### Question: Is it common to use callback handlers for form submissions in React?
 
 – Answer: Yes, callback handlers are com
+
+## Lifting State in React
