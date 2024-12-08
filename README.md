@@ -243,3 +243,6 @@ from the same parent component.
 – Answer: Yes, callback handlers are com
 
 ## Lifting State in React
+
+The process of moving state from one component
+to another, is called lifting state.
