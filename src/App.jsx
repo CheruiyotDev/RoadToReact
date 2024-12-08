@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Search from './Search';
 import Stories from './Stories';
+import Filtered from './Filtered';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -12,6 +13,7 @@ function App() {
     <>
       <Search />
       {/* <Stories /> */}
+      <Filtered />
     </>
   );
 }

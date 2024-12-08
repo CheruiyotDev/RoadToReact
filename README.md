@@ -250,3 +250,4 @@ from the same parent component.
   in it is one that either manages the state (using information directly from state, e.g. App component)
   or a component below the state managing component (using information from props, e.g. List or
   Search components)
+  ![alt text](image.png)
