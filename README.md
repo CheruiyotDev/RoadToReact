@@ -346,3 +346,31 @@ component.
 
 – Answer: Controlled components can lead to verbose code, especially in forms with many
 input elements.
+
+## Props Handling (Advanced)
+
+- Props are passed from parent to child down the component tree. Since we use props to transport
+  information from component to component frequently, and sometimes via other components which
+  are in between, it is useful to know a few tricks to make passing props more convenient.
+
+### Props Destructuring via Object Destructuring
+
+- React props are just a JavaScript object, otherwise we couldn’t access props.list or props.onSearch
+  in our React components. Since props is an object which just passes information from one component
+  to another component.
+- React’s props are rarely used in components by themselves; rather, all the information that
+  is contained in the props object is used. By destructuring the props object right away in the
+  component’s function signature, we can conveniently access all information without dealing with
+  its props container.
+- The use of object destructuring aligns with JavaScript’s best practices and promotes a cleaner and
+  more efficient React component structure. It allows for a more straightforward extraction of the
+  required properties, enhancing both the clarity of the code and the overall development experience
+  in React applications.
+- The nested destructuring helps us to gather all the needed information of the item object in the
+  function signature for its immediate usage in the component’s elements.
+- In summary, nested destructuring in React proves to be a powerful and efficient technique when
+  dealing with complex data structures, especially within nested objects or arrays in props or state.
+  This approach simplifies the extraction of deeply nested values, making the code more concise
+  and readable. However, nested destructuring introduces lots of clutter through indentations in the
+  function signature. While here it’s not the most readable option, it can be useful in other scenarios
+  though.
