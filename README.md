@@ -244,5 +244,9 @@ from the same parent component.
 
 ## Lifting State in React
 
-The process of moving state from one component
-to another, is called lifting state.
+- The process of moving state from one component
+  to another, is called lifting state.
+- Rule of thumb: Always manage state at a component level where every component that’s interested
+  in it is one that either manages the state (using information directly from state, e.g. App component)
+  or a component below the state managing component (using information from props, e.g. List or
+  Search components)
