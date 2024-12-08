@@ -251,3 +251,98 @@ from the same parent component.
   or a component below the state managing component (using information from props, e.g. List or
   Search components)
   ![alt text](image.png)
+- knowing where to instantiate state in React turns out to be an important skill in every React
+  developer’s career. The state should always be there where all components which depend on the state
+  can read (via props) and update (via callback handler) it. These are all descendant components of
+  the component which instantiates the state.
+
+## Interview Questions:
+
+### Question: What is lifting state in React?
+
+– Answer: Lifting state refers to the practice of moving the state from a child component to
+its parent component.
+
+### Question: Why would you lift state in React?
+
+– Answer: To share and manage state at a higher level, making it accessible to multiple child
+components.
+
+### Question: How do you lift state in React?
+
+– Answer: Move the state and related functions to a common ancestor (usually a parent)
+component.
+
+### Question: Can multiple child components share the same lifted state?
+
+– Answer: Yes, lifting state allows multiple child components to share the same state.
+
+### Question: What’s the advantage of lifting state over using local state in a component?
+
+– Answer: Lifting state promotes sharing state among components.
+
+### Question: What is the role of callbacks in lifting state?
+
+– Answer: Callback functions are used to pass data from child to parent components when
+lifting state.
+
+### Question: Can a child component modify the state of a parent component directly through a
+
+callback handler?
+– Answer: No, the child component can invoke the callback to notify the parent, and the
+parent can decide how to update its state.
+
+### Question: Is it necessary to lift all state to the top-level parent component?
+
+– Answer: No, only lift state to a level where it needs to be shared among multiple
+components.
+
+### Question: How does lifting state contribute to better component reusability?
+
+– Answer: Lifting state allows stateful logic to be concentrated in a common ancestor,
+making components more reusable.
+
+## React Controlled Components
+
+- HTML elements come with their internal state which is not coupled to React.
+- While
+  we provide essential attributes like id and type in addition to a handler (here: onChange), we do not
+  tell the element its value. However, it does show the correct value when a user types into it.
+- if we want to get things right, the HTML should know
+  about the React state. Therefore, we need to provide the current state as value to it:
+- Now both states are synchronized. Instead of giving the HTML element the freedom of keeping
+  track of its internal state, it uses React’s state by leveraging the element’s value attribute instead.
+  Whenever the HTML element emits a change event, the new value is written to React’s state and
+  re-renders the components. Then the HTML element uses the recent state as value again.
+
+## Interview Questions:
+
+### Question: What is a controlled component in React?
+
+– Answer: A controlled component is a component whose form elements are controlled by
+React state.
+
+### Question: How do you create a controlled input in React?
+
+– Answer: Set the input value attribute to a state variable and provide an onChange handler
+to update the state.
+
+### Question: What is the role of the value prop in a controlled input element?
+
+– Answer: The value prop sets the current value of the input, making it a controlled
+component.
+
+### Question: How do you handle a controlled checkbox in React?
+
+– Answer: Use the checked attribute and provide an onChange handler to update the
+corresponding state.
+
+### Question: How do you clear the value of a controlled component?
+
+– Answer: Set the state variable to an empty or null value to clear the value of a controlled
+component.
+
+### Question: What are the potential downsides of using controlled components?
+
+– Answer: Controlled components can lead to verbose code, especially in forms with many
+input elements.
