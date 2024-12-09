@@ -374,3 +374,74 @@ input elements.
   and readable. However, nested destructuring introduces lots of clutter through indentations in the
   function signature. While here it’s not the most readable option, it can be useful in other scenarios
   though.
+
+## Spread and Rest Operators
+
+- JavaScript’s spread operator allows us to literally spread all key/value pairs of an object to another
+  object. This can also be done in React’s JSX. Instead of passing each property one at a time via
+  props from List to Item component as before, we can use JavaScript’s spread operator to pass all the
+  object’s key/value pairs as attribute/value pairs to a JSX element:
+- Even though both have the same syntax (three dots), the rest operator shouldn’t be mistaken with
+  the spread operator. Whereas the rest operator happens on the left side of an assignment, the spread operator happens on the right side. The rest operator is always used to separate an object from some
+  of its properties.
+- Almost always use object destructuring for props in a function component’s function signature,
+  because props are rarely used themselves. Exception: When props are only passed through the
+  component to the next child component (see when to use spread operator).
+- Use the spread operator when you want to pass all key/value pairs of an object to a child
+  component in JSX. For example, often props themselves are not used in a component but
+  only passed along to the next component. Then it makes sense to just spread the props object
+  {...props} to the next component.
+- Use the rest operator when you only want to split out certain properties from your props object.
+- Use nested destructuring only when it improves readability.
+
+## Interview Questions:
+
+### Question: How do you destructure props in a function component’s parameters?
+
+– Answer: You can destructure props directly in the function parameters, like this: function
+MyComponent({ prop1, prop2 }) {…}.
+
+### Question: Can you provide a default value while destructuring props?
+
+– Answer: Yes, you can provide default values during destructuring, such as { prop1 =
+‘default’, prop2 }.
+
+### Question: Is it necessary to destructure all props, or can you choose specific ones?
+
+– Answer: You can choose to destructure specific props based on your component’s needs,
+leaving others untouched.
+
+### Question: How is the spread operator (…) used in React props?
+
+– Answer: The spread operator is used to pass all properties of an object as separate props
+to a React component, like <MyComponent {…obj} />.
+
+### Question: Can you use the spread operator to combine props with additional ones?
+
+– Answer: Yes, you can combine existing props with additional ones using the spread
+operator, like <MyComponent {…props} newProp={value} />.
+
+### Question: Does the spread operator create a shallow or deep copy of an object?
+
+– Answer: The spread operator creates a shallow copy of an object, meaning nested objects
+are still references to the original.
+
+### Question: What is the purpose of the rest operator (…rest) in React?
+
+– Answer: The rest operator is used to collect remaining properties into a new object, often
+used in combination with props destructuring.
+
+### Question: Why is array destructuring used for React Hooks like useState and object destruc-
+
+turing for props?
+– Answer: A React Hook like useState returns an array whereas props are an object; hence
+we need to apply the appropriate operation for the underlying data structure. The benefit
+of having an array returned from useState is that the values can be given any name in
+the destructuring operation.
+
+### Question: What is prop drilling in React?
+
+– Answer: Prop drilling is the process of passing props through multiple layers of compo-
+nents to reach a deeply nested child component.
+
+## React Side-Effects
