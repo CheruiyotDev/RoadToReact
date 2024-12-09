@@ -398,50 +398,113 @@ input elements.
 
 ### Question: How do you destructure props in a function component’s parameters?
 
-– Answer: You can destructure props directly in the function parameters, like this: function
-MyComponent({ prop1, prop2 }) {…}.
+- Answer: You can destructure props directly in the function parameters, like this: function
+  MyComponent({ prop1, prop2 }) {…}.
 
 ### Question: Can you provide a default value while destructuring props?
 
-– Answer: Yes, you can provide default values during destructuring, such as { prop1 =
-‘default’, prop2 }.
+- Answer: Yes, you can provide default values during destructuring, such as { prop1 =
+  ‘default’, prop2 }.
 
 ### Question: Is it necessary to destructure all props, or can you choose specific ones?
 
-– Answer: You can choose to destructure specific props based on your component’s needs,
-leaving others untouched.
+- Answer: You can choose to destructure specific props based on your component’s needs,
+  leaving others untouched.
 
 ### Question: How is the spread operator (…) used in React props?
 
-– Answer: The spread operator is used to pass all properties of an object as separate props
-to a React component, like <MyComponent {…obj} />.
+- Answer: The spread operator is used to pass all properties of an object as separate props
+  to a React component, like <MyComponent {…obj} />.
 
 ### Question: Can you use the spread operator to combine props with additional ones?
 
-– Answer: Yes, you can combine existing props with additional ones using the spread
-operator, like <MyComponent {…props} newProp={value} />.
+- Answer: Yes, you can combine existing props with additional ones using the spread
+  operator, like <MyComponent {…props} newProp={value} />.
 
 ### Question: Does the spread operator create a shallow or deep copy of an object?
 
-– Answer: The spread operator creates a shallow copy of an object, meaning nested objects
-are still references to the original.
+- Answer: The spread operator creates a shallow copy of an object, meaning nested objects
+  are still references to the original.
 
 ### Question: What is the purpose of the rest operator (…rest) in React?
 
-– Answer: The rest operator is used to collect remaining properties into a new object, often
-used in combination with props destructuring.
+- Answer: The rest operator is used to collect remaining properties into a new object, often
+  used in combination with props destructuring.
 
 ### Question: Why is array destructuring used for React Hooks like useState and object destruc-
 
 turing for props?
-– Answer: A React Hook like useState returns an array whereas props are an object; hence
-we need to apply the appropriate operation for the underlying data structure. The benefit
-of having an array returned from useState is that the values can be given any name in
-the destructuring operation.
+
+- Answer: A React Hook like useState returns an array whereas props are an object; hence
+  we need to apply the appropriate operation for the underlying data structure. The benefit
+  of having an array returned from useState is that the values can be given any name in
+  the destructuring operation.
 
 ### Question: What is prop drilling in React?
 
-– Answer: Prop drilling is the process of passing props through multiple layers of compo-
-nents to reach a deeply nested child component.
+- Answer: Prop drilling is the process of passing props through multiple layers of compo-
+  nents to reach a deeply nested child component.
 
 ## React Side-Effects
+
+- A React component’s returned output is defined by its props and state.
+- Side-effects can affect this
+  output too, because they are used to interact with third-party APIs (e.g. browser’s localStorage API,
+  remote APIs for data fetching), with HTML elements for width and height measurements, or with
+  built-in JavaScript functions such as timers or intervals.
+- React’s useEffect Hook takes two arguments: The first argument is a function that runs our side-
+  effect. In our case, the side-effect stores searchTerm into the browser’s local storage. The second
+  argument is a dependency array of variables. If one of these variables changes, the function for the
+  side-effect is called. In our case, the function is called every time the searchTerm changes (e.g. when
+  a user types into the HTML input field). In addition, it’s also called initially when the component
+  renders for the first time.
+- using React useEffect Hook instead of managing the side-effect in the (event) handler
+  has made the application more robust. Whenever and wherever the searchTerm state is updated via
+  setSearchTerm, the browser’s local storage will always be in sync with it.
+
+## Interview Questions:
+
+### Question: What is useEffect in React?
+
+- Answer: useEffect is a hook in React that allows function components to perform side
+  effects.
+
+### Question: Can you use multiple useEffect hooks in one component?
+
+- Answer: Yes, you can use multiple useEffect hooks in a single component.
+
+### Question: What does the second argument in useEffect represent?
+
+- Answer: The second argument is an array of dependencies. The effect runs when any of
+  these dependencies change.
+
+### Question: How do you run useEffect only once (on mount)?
+
+- Answer: Pass an empty dependency array ([]) as the second argument.
+
+### Question: Can useEffect return a cleanup function?
+
+- Answer: Yes, the function returned from useEffect serves as a cleanup function.
+
+### Question: What is the purpose of the cleanup function in useEffect?
+
+- Answer: It handles the cleanup or teardown of resources when the component unmounts
+  or when the dependencies change.
+
+### Question: How do you perform cleanup in useEffect for each render?
+
+- Answer: Return a function inside the useEffect with the cleanup logic.
+
+### Question: Can you conditionally run useEffect based on a certain condition?
+
+- Answer: Yes, you can use conditional statements inside useEffect to control when it should
+  run.
+
+### Question: What happens if you omit the second argument in useEffect?
+
+- Answer: It runs the effect after every render, leading to potential performance issues.
+
+### Question: How does useEffect contribute to avoiding race conditions in React?
+
+- Answer: It allows you to handle asynchronous operations and avoid race conditions by
+  managing the order of execution.
