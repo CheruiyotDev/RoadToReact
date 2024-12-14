@@ -14,7 +14,7 @@ const filteredWords = words.filter(function (word) {
 const Filtered = () => {
   return (
     <div>
-      <p>{filteredWords} </p>
+      <p>{filteredWords}</p>
     </div>
   );
 };

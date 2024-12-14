@@ -508,3 +508,13 @@ turing for props?
 
 - Answer: It allows you to handle asynchronous operations and avoid race conditions by
   managing the order of execution.
+
+## React Custom Hooks
+
+- It involves the creation of our own hooks tailored to specific requirements
+- The primary objective of this custom hook is to ensure the synchronization of a component's state with local strage of the browser.
+- With this custom hook, we can use it in a manner akin to React’s native useState Hook. It provides
+  both a state variable and a function for updating the state, taking an initial state as an argument.
+  The underlying functionality of this hook will be designed to ensure the synchronization of the state
+  with the local storage of the browser. If you look closely at the App component in the previous code
+  snippet, you can see that none of the previously introduced local storage features are there anymore.

@@ -19,10 +19,13 @@ const App = () => {
       objectID: 1,
     },
   ];
+  // useState
+  // const [searchTerm, setSearchTerm] = React.useState(
+  //   localStorage.getItem('search') || 'React'
+  // );
 
-  const [searchTerm, setSearchTerm] = React.useState(
-    localStorage.getItem('search') || 'React'
-  );
+  // React custom hooks
+  const [searchTerm, setSearchTerm] = useStorageState('React');
 
   React.useEffect(() => {
     localStorage.setItem('search', searchTerm);
