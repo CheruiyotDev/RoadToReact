@@ -518,3 +518,61 @@ turing for props?
   The underlying functionality of this hook will be designed to ensure the synchronization of the state
   with the local storage of the browser. If you look closely at the App component in the previous code
   snippet, you can see that none of the previously introduced local storage features are there anymore.
+- A custom hook can
+  encapsulate non-trivial implementation details that should be kept away from a component, can
+  be used in more than one React component, can be a composition of other hooks, and can even
+  be open-sourced as an external library.
+
+## Interview Questions:
+
+### Question: What are React custom hooks?
+
+- Answer: Custom hooks are JavaScript functions that utilize React hooks to encapsulate
+  and reuse logic in function components.
+
+### Question: How do you create a custom hook in React?
+
+- Answer: Create a function starting with “use” and use existing React hooks or other custom
+  hooks within it.
+
+### Question: Can custom hooks have state?
+
+- Answer: Yes, custom hooks can use hooks like useState.
+
+### Question: What naming convention should custom hooks follow?
+
+- Answer: Custom hooks should be named with the prefix “use” to signal their association
+  with React hooks.
+
+### Question: Can custom hooks accept parameters?
+
+- Answer: Yes, custom hooks can accept parameters to make them flexible and customizable.
+
+### Question: How do you share stateful logic between components using custom hooks?
+
+- Answer: Extract the shared logic into a custom hook and use it in multiple components.
+
+### Question: Do custom hooks have access to the component’s props?
+
+- Answer: No, custom hooks don’t have direct access to the component’s props. They usually
+  accept necessary data through arguments.
+
+### Question: Can you use multiple custom hooks in a single component?
+
+- Answer: Yes, you can use multiple custom hooks in a single component to leverage
+  different pieces of reusable logic.
+
+### Question: What’s the key benefit of using custom hooks?
+
+- Answer: Custom hooks promote code reuse, abstraction of complex logic, and maintain-
+  ability in React function components.
+
+### Question: Can custom hooks have side effects like data fetching?
+
+- Answer: Yes, custom hooks can encapsulate side effects using hooks like useEffect to
+  perform tasks such as data fetching.
+
+### Question: Are custom hooks only for state management?
+
+- Answer: No, while custom hooks can manage state, they can encapsulate any reusable
+  logic, including side effects and computations.
